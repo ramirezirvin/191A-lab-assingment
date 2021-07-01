@@ -20,7 +20,7 @@ let y = 19 + 19
         //JavaScript let variable declaration to create a marker
         let marker = L.marker([34.0709, -118.444]).addTo(map)
                 .bindPopup('Math Sciences 4328 aka the Technology Sandbox<br> is the lab where I work in ')
-                // .openPopup();
+                .openPopup();
                 
         fetch("map.geojson")
             .then(response => {
@@ -29,11 +29,7 @@ let y = 19 + 19
             .then(data =>{
                 // Basic Leaflet method to add GeoJSON data
                     // the leaflet method for adding a geojson
-                    L.geoJSON(data, {
-                        pointToLayer: function (feature, latlng) {
-                            return L.circleMarker(latlng, {color: feature.properties.color});
-                        }
-                    }).bindPopup(function (layer) {
-                        return layer.feature.properties.place;
+                    L.geoJSON(data).bindPopup(function (layer) {
+                        return layer.feature.properties.Cities-Lived;
                     }).addTo(map);
                 });
