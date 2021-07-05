@@ -10,7 +10,9 @@ let y = 19 + 19
 
 
 
-        const map = L.map('map').setView([34.0709, -118.444], 5);
+        const map = L.map('map').setView([34.0709, -118.444], 8);
+        const colors = ["red", "green", "blue"];
+        let colorName = "";
 
         // Leaflet tile layer, i.e. the base map
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
