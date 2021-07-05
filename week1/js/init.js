@@ -24,7 +24,7 @@ let y = 19 + 19
                 .bindPopup('Math Sciences 4328 aka the Technology Sandbox<br> is the lab where I work in ')
                 .openPopup();
                 
-        fetch("map.geojson")
+        fetch("citiesmap.geojson")
             .then(response => {
                 return response.json();
                 })
