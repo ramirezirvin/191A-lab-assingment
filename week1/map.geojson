@@ -1,1 +1,53 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"Cities Lived":"second home"},"geometry":{"type":"Point","coordinates":[-99.1351318359375,19.440694401302856]}},{"type":"Feature","properties":{"Cities Lived":"hometown"},"geometry":{"type":"Point","coordinates":[-95.3668212890625,29.778681776917633]}},{"type":"Feature","properties":{"Cities Lived":"currently live"},"geometry":{"type":"Point","coordinates":[-118.2403564453125,34.066311964721045]}}]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "star-stroked",
+        "Locations Lived": "Houston, TX my hometown, where I was born."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.36270141601562,
+          29.758118557057607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#00ff11",
+        "marker-size": "medium",
+        "marker-symbol": "star-stroked",
+        "Locations Lived": "Mexico City, MX my mother's hometown and where I would spend my 5 months out of the year as a kid"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.13375854492186,
+          19.429686571587755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#1100ff",
+        "marker-size": "medium",
+        "marker-symbol": "star-stroked",
+        "Locations Lived": "Los Angeles, CA where I currently live and attend university"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.24378967285155,
+          34.049814864716275
+        ]
+      }
+    }
+  ]
+}
