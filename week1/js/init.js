@@ -1,32 +1,28 @@
-const map = L.map('map').setView([34.0709, -118.444], 8);
-const colors = ["red", "green", "blue"];
-let colorName = "";
+// JavaScript const variable declaration
+const map = L.map('map').setView([34.0709, -118.444], 0);
 
 // Leaflet tile layer, i.e. the base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-      
-fetch("citiesmap.geojson")
+
+//JavaScript let variable declaration to create a marker
+
+fetch("map.geojson")
 	.then(response => {
 		return response.json();
 		})
     .then(data =>{
         // Basic Leaflet method to add GeoJSON data
             // the leaflet method for adding a geojson
-            L.geoJSON(data, {
-                pointToLayer: function (feature, latlng) {
-                    let x = Math.floor(Math.random()*colors.length)
-                    colorName = colors[x];
-                    colors.splice(x,1);
-                    return L.circleMarker(latlng, {color: colorName});
-                }
-            }).bindPopup(function (layer) {
+            L.geoJSON(data).bindPopup(function (layer) {
                 return layer.feature.properties.name;
-            })
-            .addTo(map)
-            .openPopup();
+            }).addTo(map);
         });
 
 
-        
+
+// Leaflet tile layer, i.e. the base map
+
+
+//JavaScript let variable declaration to create a marker
