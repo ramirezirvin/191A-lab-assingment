@@ -7,7 +7,7 @@
         "marker-color": "#ff0000",
         "marker-size": "medium",
         "marker-symbol": "star-stroked",
-        "Locations Lived": "Houston, TX my hometown, where I was born."
+        "Locations-Lived": "Houston, TX my hometown, where I was born."
       },
       "geometry": {
         "type": "Point",
@@ -23,7 +23,7 @@
         "marker-color": "#00ff11",
         "marker-size": "medium",
         "marker-symbol": "star-stroked",
-        "Locations Lived": "Mexico City, MX my mother's hometown and where I would spend my 5 months out of the year as a kid"
+        "Locations-Lived": "Mexico City, MX my mother's hometown and where I would spend my 5 months out of the year as a kid"
       },
       "geometry": {
         "type": "Point",
@@ -39,7 +39,7 @@
         "marker-color": "#1100ff",
         "marker-size": "medium",
         "marker-symbol": "star-stroked",
-        "Locations Lived": "Los Angeles, CA where I currently live and attend university"
+        "Locations-Lived": "Los Angeles, CA where I currently live and attend university"
       },
       "geometry": {
         "type": "Point",
