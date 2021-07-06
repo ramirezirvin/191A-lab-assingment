@@ -1,4 +1,4 @@
-const map = L.map('map').setView([34.0709, -118.444], 8);
+const map = L.map('map').setView([34.0709, -118.444], 4);
 const colors = ["red", "green", "blue"];
 let colorName = "";
 
