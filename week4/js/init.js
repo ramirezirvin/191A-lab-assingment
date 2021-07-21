@@ -1,4 +1,4 @@
-const myMap = L.map('mapArea').setView([34.0709, -118.444], 5);
+const myMap = L.map('mapArea').setView([34.0709, -118.444], 6);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -11,9 +11,10 @@ fetch(url)
 		})
     .then(data =>{
         //console.log(data)
-        processData(Data)
+        processData(data)
     })
 
+    
     function processData(theData){
         const formattedData = [] /* this array will eventually be populated with the contents of the spreadsheet's rows */
         const rows = theData.feed.entry // this is the weird Google Sheet API format we will be removing
@@ -37,14 +38,12 @@ fetch(url)
 }
 
 
-function addMarker(lat,lng,message){
-        L.marker([lat,lng]).addTo(myMap).bindPopup(`<h2>${message}</h2>`)
-        //return message    
+function addMarker(data){
+        L.marker([data.lat,data.lng]).addTo(myMap).bindPopup(`<h2>Location: ${data.location}</h3>`+ `<h2>Vaccine: ${data.whichvaccinedidyouget}</h2>`+`<h3><p>Ethnicity: ${data.whatisyourethnicity}<p/></h3>`+`<h3><p>Age:${data.whatisyourage}</p></h3>`)
+          
 }
 
-//form of-loop
-let someList = ["hi", 'albert', 3, 4]
-for (const someThing of someList){
-    console.log(someThing)
-}
-addMarker(37,-122,'home land!')
+let eeveelutions = [ "vaporeon", "jolteon", "flareon" ];
+for (let i = 0; i <= eeveelutions.length; i++) {
+   console.log(eeveelutions[i]);    
+}    
