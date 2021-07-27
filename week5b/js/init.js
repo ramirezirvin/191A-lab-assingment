@@ -21,7 +21,7 @@ fetch(url)
 )
 
 let speakFluentEnglish = L.featureGroup();
-let speakOtherLanguage = L.featureGroup();
+let speakAnotherLanguage = L.featureGroup();
 
 let exampleOptions = {
     radius: 4,
@@ -40,7 +40,7 @@ function addMarker(data){
         }
     else{
         exampleOptions.fillColor = "yellow"
-        speakOtherLanguage.addLayer(L.circleMarker([data.lat,data.lng],exampleOptions).bindPopup(`<h2>Speaks another language</h2>`))
+        speakAnotherLanguage.addLayer(L.circleMarker([data.lat,data.lng],exampleOptions).bindPopup(`<h2>Speaks another language</h2>`))
         createButtons(data.lat,data.lng,data.location)
     }
     return data.timestamp
@@ -76,14 +76,14 @@ function formatData(theData){
         console.log(formattedData)
         formattedData.forEach(addMarker)
         speakFluentEnglish.addTo(myMap)
-        speaksAnotherLanguage.addTo(myMap)
-        let allLayers = L.featureGroup([speakFluentEnglish,speaksAnotherLanguage]);
+        speakAnotherLanguage.addTo(myMap)
+        let allLayers = L.featureGroup([speakFluentEnglish,speakAnotherLanguage]);
         myMap.fitBounds(allLayers.getBounds());        
 }
 
 let layers = {
 	"Speaks English": speakFluentEnglish,
-	"Speaks Another Language": speakOtherLanguage
+	"Speaks Another Language": speakAnotherLanguage
 }
 
 L.control.layers(null,layers).addTo(myMap)
