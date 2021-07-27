@@ -24,7 +24,7 @@ let speakFluentEnglish = L.featureGroup();
 let speakAnotherLanguage = L.featureGroup();
 
 let exampleOptions = {
-    radius: 4,
+    radius: 7,
     fillColor: "#ff7800",
     color: "#000",
     weight: 1,
