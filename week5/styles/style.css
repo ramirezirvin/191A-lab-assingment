@@ -1,9 +1,14 @@
 body{
+
+    background-color: #C7D3F3;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr; /* this creates an even two column layout*/
     grid-template-rows: .2fr .7fr .1fr;
-    grid-template-areas: "header header header" "mappanel sidepanel survey" "footer footer footer" /* this creates one row with map panel on the left and sidepanel on the right */
+    grid-template-areas: "mappanel sidepanel survey"  /* this creates one row with map panel on the left and sidepanel on the right */
 }
+
+
+
 
 #mapArea{
     height:90vh;
@@ -13,15 +18,15 @@ body{
 #survey{
     grid-area: survey;
 } 
+
+
 #contents{
     grid-area: sidepanel;
-    display: grid;
     grid-template-columns: 1fr; 
 }
-
-#header{
-    grid-area: header;
-}
-#footer{
-    grid-area: footer;
-}
+.grid-container {
+    display: maparea;
+    grid-gap: 10px 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
