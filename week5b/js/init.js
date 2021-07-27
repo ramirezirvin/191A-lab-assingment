@@ -1,4 +1,4 @@
-const myMap = L.map('mapArea').setView([34.0709, -118.444], 5);
+const myMap = L.map('mapArea').setView([34.0709, -118.444], 7);
 
 const url = "https://spreadsheets.google.com/feeds/list/1h8Yqm7tGpoBxKvxsmBvlnuBw66aDVJTO3C1Pn4yGw0w/oihmdjv/public/values?alt=json"
 
