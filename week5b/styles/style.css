@@ -1,4 +1,5 @@
 body{
+    background-color: #C7D3F3;
     display: grid;
     grid-template-columns: 1fr 1fr; 
     grid-auto-rows: minmax(5px, auto);

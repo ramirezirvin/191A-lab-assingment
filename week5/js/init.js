@@ -5,15 +5,18 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
 
+
+
 function addMarker(data){
-        // console.log(data)
-        // these are the names of our lat/long fields in the google sheets:
-        L.marker([data.lat,data.lng]).addTo(myMap).bindPopup(`<h2>${data.timestamp}</h2>`)
-        createButtons(data.lat,data.lng,data.location)
-        return data.timestamp
+  // console.log(data)
+  // these are the names of our lat/long fields in the google sheets:
+  L.marker([data.lat,data.lng]).addTo(myMap).bindPopup(`<h2>Location: ${data.location}</h3>`+ `<h2>Vaccine: ${data.whichvaccinedidyouget}</h2>`+`<h3><p>Ethnicity: ${data.whatisyourethnicity}<p/></h3>`+`<h3><p>Age:${data.whatisyourage}</p></h3>`)
+  createButtons(data.lat,data.lng,data.location)
+  return data.timestamp
 }
 
-let url = "https://spreadsheets.google.com/feeds/list/1j3a2do9HIS6xvpBsKMjmI4soNaqGdlnIkwYQHktmp1U/oua1awz/public/values?alt=json"
+
+let url = "https://spreadsheets.google.com/feeds/list/1h8Yqm7tGpoBxKvxsmBvlnuBw66aDVJTO3C1Pn4yGw0w/oihmdjv/public/values?alt=json"
 
 fetch(url)
 	.then(response => {
@@ -24,6 +27,7 @@ fetch(url)
                 formatData(data)
         }
 )
+
 function createButtons(lat,lng,title){
     const newButton = document.createElement("button"); // adds a new button
     newButton.id = "button"+title; // gives the button a unique id
@@ -36,6 +40,8 @@ function createButtons(lat,lng,title){
     const buttonsSpace = document.getElementById("contents")
     buttonsSpace.appendChild(newButton); //this adds the button to our page.
 }
+
+
 
 function formatData(theData){
         const formattedData = [] /* this array will eventually be populated with the contents of the spreadsheet's rows */
@@ -50,5 +56,6 @@ function formatData(theData){
           formattedData.push(formattedRow)
         }
         console.log(formattedData)
-        formattedData.forEach(addMarker)        
-}
+        formattedData.forEach(addMarker)     
+           
+}   
